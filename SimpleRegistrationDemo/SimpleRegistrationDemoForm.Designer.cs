@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.accountManagmenetTabControl = new System.Windows.Forms.TabControl();
             this.registerTabPage = new System.Windows.Forms.TabPage();
             this.clearBtn = new System.Windows.Forms.Button();
             this.submitBtn = new System.Windows.Forms.Button();
-            this.loginTabPage = new System.Windows.Forms.TabPage();
             this.simpleRegistrationUserControl = new KevinMaM17_Lab2_Ex2.SimpleRegistrationUserControl();
+            this.loginTabPage = new System.Windows.Forms.TabPage();
             this.accountsDataGridView = new System.Windows.Forms.DataGridView();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.Panel2.SuspendLayout();
@@ -43,6 +47,7 @@
             this.accountManagmenetTabControl.SuspendLayout();
             this.registerTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mainSplitContainer
@@ -110,6 +115,15 @@
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
+            // simpleRegistrationUserControl
+            // 
+            this.simpleRegistrationUserControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleRegistrationUserControl.GroupBoxTitle = "Registration";
+            this.simpleRegistrationUserControl.Location = new System.Drawing.Point(8, 6);
+            this.simpleRegistrationUserControl.Name = "simpleRegistrationUserControl";
+            this.simpleRegistrationUserControl.Size = new System.Drawing.Size(499, 261);
+            this.simpleRegistrationUserControl.TabIndex = 0;
+            // 
             // loginTabPage
             // 
             this.loginTabPage.Location = new System.Drawing.Point(4, 34);
@@ -120,22 +134,35 @@
             this.loginTabPage.Text = "Login";
             this.loginTabPage.UseVisualStyleBackColor = true;
             // 
-            // simpleRegistrationUserControl
-            // 
-            this.simpleRegistrationUserControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleRegistrationUserControl.GroupBoxTitle = "Registration";
-            this.simpleRegistrationUserControl.Location = new System.Drawing.Point(8, 6);
-            this.simpleRegistrationUserControl.Name = "simpleRegistrationUserControl";
-            this.simpleRegistrationUserControl.Size = new System.Drawing.Size(499, 261);
-            this.simpleRegistrationUserControl.TabIndex = 0;
-            // 
             // accountsDataGridView
             // 
+            this.accountsDataGridView.AutoGenerateColumns = false;
             this.accountsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.accountsDataGridView.Location = new System.Drawing.Point(4, 13);
+            this.accountsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.usernameDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn});
+            this.accountsDataGridView.DataSource = this.accountBindingSource;
+            this.accountsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountsDataGridView.Location = new System.Drawing.Point(0, 0);
             this.accountsDataGridView.Name = "accountsDataGridView";
-            this.accountsDataGridView.Size = new System.Drawing.Size(240, 150);
+            this.accountsDataGridView.Size = new System.Drawing.Size(422, 308);
             this.accountsDataGridView.TabIndex = 0;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(SimpleRegistrationDemo.Account);
             // 
             // SimpleRegistrationDemoForm
             // 
@@ -154,6 +181,7 @@
             this.accountManagmenetTabControl.ResumeLayout(false);
             this.registerTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,6 +196,9 @@
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.DataGridView accountsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource accountBindingSource;
     }
 }
 
