@@ -35,11 +35,14 @@
             this.submitBtn = new System.Windows.Forms.Button();
             this.loginTabPage = new System.Windows.Forms.TabPage();
             this.simpleRegistrationUserControl = new KevinMaM17_Lab2_Ex2.SimpleRegistrationUserControl();
+            this.accountsDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
+            this.mainSplitContainer.Panel2.SuspendLayout();
             this.mainSplitContainer.SuspendLayout();
             this.accountManagmenetTabControl.SuspendLayout();
             this.registerTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // mainSplitContainer
@@ -51,6 +54,10 @@
             // mainSplitContainer.Panel1
             // 
             this.mainSplitContainer.Panel1.Controls.Add(this.accountManagmenetTabControl);
+            // 
+            // mainSplitContainer.Panel2
+            // 
+            this.mainSplitContainer.Panel2.Controls.Add(this.accountsDataGridView);
             this.mainSplitContainer.Size = new System.Drawing.Size(937, 308);
             this.mainSplitContainer.SplitterDistance = 511;
             this.mainSplitContainer.TabIndex = 0;
@@ -122,6 +129,14 @@
             this.simpleRegistrationUserControl.Size = new System.Drawing.Size(499, 261);
             this.simpleRegistrationUserControl.TabIndex = 0;
             // 
+            // accountsDataGridView
+            // 
+            this.accountsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.accountsDataGridView.Location = new System.Drawing.Point(4, 13);
+            this.accountsDataGridView.Name = "accountsDataGridView";
+            this.accountsDataGridView.Size = new System.Drawing.Size(240, 150);
+            this.accountsDataGridView.TabIndex = 0;
+            // 
             // SimpleRegistrationDemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,11 +146,14 @@
             this.Name = "SimpleRegistrationDemoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SimpleRegistration Demo";
+            this.Load += new System.EventHandler(this.SimpleRegistrationDemoForm_Load);
             this.mainSplitContainer.Panel1.ResumeLayout(false);
+            this.mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
             this.accountManagmenetTabControl.ResumeLayout(false);
             this.registerTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,6 +167,7 @@
         private KevinMaM17_Lab2_Ex2.SimpleRegistrationUserControl simpleRegistrationUserControl;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.Button clearBtn;
+        private System.Windows.Forms.DataGridView accountsDataGridView;
     }
 }
 

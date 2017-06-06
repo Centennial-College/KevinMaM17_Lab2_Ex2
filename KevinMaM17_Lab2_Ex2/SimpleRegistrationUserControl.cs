@@ -62,6 +62,8 @@ namespace KevinMaM17_Lab2_Ex2
         public bool SubmitForm()
         {
             errorMessage = "";
+            validForm = true; //true until proven false
+
             //validate the three textboxes
             if (!this.validateUsernameTB())
             {
