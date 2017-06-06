@@ -82,7 +82,7 @@ namespace KevinMaM17_Lab2_Ex2
         private void validateConfirmPasswordTB()
         {
             //confirm pwd must match pwd textbox
-            if (!this.ConfirmPassword.Equals(this.Password))
+            if (!this.ConfirmPassword.Equals(this.Password) || this.ConfirmPassword.Length == 0)
             {
                 this.confirmPwdTB.BackColor = Color.Red;
             }
