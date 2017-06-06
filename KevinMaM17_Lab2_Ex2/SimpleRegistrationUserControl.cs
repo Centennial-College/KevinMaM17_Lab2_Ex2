@@ -13,6 +13,11 @@ namespace KevinMaM17_Lab2_Ex2
 {
     public partial class SimpleRegistrationUserControl : UserControl
     {
+        //declared regex obj to validate password
+        Regex regExp = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+        bool validForm = true;  //true until proven guilty
+
+
         public SimpleRegistrationUserControl()
         {
             InitializeComponent();
@@ -53,32 +58,36 @@ namespace KevinMaM17_Lab2_Ex2
             this.confirmPwdTB.BackColor = Color.White;
         }
 
-        public void SubmitForm()
+        public bool SubmitForm()
         {
             //validate the three textboxes
-            this.validateUsernameTB();
-            this.validatePasswordTB();
-            this.validateConfirmPasswordTB();
+            if (!this.validateUsernameTB())
+                validForm = false;
+            if (!this.validatePasswordTB())
+                validForm = false;
+            if (!this.validateConfirmPasswordTB())
+                validForm = false;
+            return validForm;
         }
 
         //PRIVATE METHODS
-        private void validateConfirmPasswordTB()
+        private bool validateConfirmPasswordTB()
         {
             //confirm pwd must match pwd textbox
             if (!this.ConfirmPassword.Equals(this.Password) || this.ConfirmPassword.Length == 0)
             {
                 this.confirmPwdTB.BackColor = Color.Red;
+                return false;
             }
             else
             {
                 this.confirmPwdTB.BackColor = Color.White;
+                return true;
             }
         }
 
-        //declared regex obj to validate password
-        Regex regExp = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
 
-        private void validatePasswordTB()
+        private bool validatePasswordTB()
         {
             //validates password for following criteria:
             //at least on capital, at least one lowercase, at least one digit, at least one special char, at least 8 characters length
@@ -86,23 +95,27 @@ namespace KevinMaM17_Lab2_Ex2
             if (!regExp.IsMatch(this.Password))
             {
                 this.pwdTB.BackColor = Color.Red;
+                return false;
             }
             else
             {
                 this.pwdTB.BackColor = Color.White;
+                return true;
             }
         }
 
-        private void validateUsernameTB()
+        private bool validateUsernameTB()
         {
             //checks for empty string
             if (this.Username.Length == 0)
             {
                 this.usrnameTB.BackColor = Color.Red;
+                return false;
             }
             else
             {
                 this.usrnameTB.BackColor = Color.White;
+                return true;
             }
         }
     }

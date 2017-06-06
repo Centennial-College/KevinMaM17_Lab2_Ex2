@@ -33,8 +33,8 @@
             this.registerTabPage = new System.Windows.Forms.TabPage();
             this.clearBtn = new System.Windows.Forms.Button();
             this.submitBtn = new System.Windows.Forms.Button();
-            this.simpleRegistrationUserControl = new KevinMaM17_Lab2_Ex2.SimpleRegistrationUserControl();
             this.loginTabPage = new System.Windows.Forms.TabPage();
+            this.simpleRegistrationUserControl = new KevinMaM17_Lab2_Ex2.SimpleRegistrationUserControl();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.SuspendLayout();
@@ -103,15 +103,6 @@
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
-            // simpleRegistrationUserControl
-            // 
-            this.simpleRegistrationUserControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleRegistrationUserControl.GroupBoxTitle = "Registration";
-            this.simpleRegistrationUserControl.Location = new System.Drawing.Point(8, 6);
-            this.simpleRegistrationUserControl.Name = "simpleRegistrationUserControl";
-            this.simpleRegistrationUserControl.Size = new System.Drawing.Size(499, 261);
-            this.simpleRegistrationUserControl.TabIndex = 0;
-            // 
             // loginTabPage
             // 
             this.loginTabPage.Location = new System.Drawing.Point(4, 34);
@@ -122,6 +113,15 @@
             this.loginTabPage.Text = "Login";
             this.loginTabPage.UseVisualStyleBackColor = true;
             // 
+            // simpleRegistrationUserControl
+            // 
+            this.simpleRegistrationUserControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleRegistrationUserControl.GroupBoxTitle = "Registration";
+            this.simpleRegistrationUserControl.Location = new System.Drawing.Point(8, 6);
+            this.simpleRegistrationUserControl.Name = "simpleRegistrationUserControl";
+            this.simpleRegistrationUserControl.Size = new System.Drawing.Size(499, 261);
+            this.simpleRegistrationUserControl.TabIndex = 0;
+            // 
             // SimpleRegistrationDemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +129,7 @@
             this.ClientSize = new System.Drawing.Size(937, 308);
             this.Controls.Add(this.mainSplitContainer);
             this.Name = "SimpleRegistrationDemoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SimpleRegistration Demo";
             this.mainSplitContainer.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
