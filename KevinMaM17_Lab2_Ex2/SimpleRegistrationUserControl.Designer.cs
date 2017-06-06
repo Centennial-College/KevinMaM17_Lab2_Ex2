@@ -118,6 +118,7 @@
             this.clearBtn.TabIndex = 9;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // submitBtn
             // 
@@ -128,6 +129,7 @@
             this.submitBtn.TabIndex = 10;
             this.submitBtn.Text = "Submit";
             this.submitBtn.UseVisualStyleBackColor = true;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // SimpleRegistrationUserControl
             // 

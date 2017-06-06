@@ -18,33 +18,11 @@ namespace KevinMaM17_Lab2_Ex2
         }
 
         //Public Properties to expose the text property of the constituent controls in this custom user control
-
         //properties for group box title
         public string GroupBoxTitle
         {
             get { return this.registrationGroupBox.Text; }
             set { this.registrationGroupBox.Text = value; }
-        }
-
-        //properties for username
-        public string Username
-        {
-            get { return this.usrnameTB.Text; }
-            set { this.usrnameTB.Text = value; }
-        }
-
-        //properties for password
-        public string Password
-        {
-            get { return this.pwdTB.Text; }
-            set { this.pwdTB.Text = value; }
-        }
-
-        //properties for confirm password
-        public string ConfirmPassword
-        {
-            get { return this.confirmPwdTB.Text; }
-            set { this.confirmPwdTB.Text = value; }
         }
 
         //properties for submit btn
@@ -59,6 +37,66 @@ namespace KevinMaM17_Lab2_Ex2
         {
             get { return this.clearBtn.Text; }
             set { this.clearBtn.Text = value; }
+        }
+
+        //READ-ONLY PROPERTIES
+        public string Username
+        {
+            get { return this.usrnameTB.Text; }
+        }
+
+        public string Password
+        {
+            get { return this.pwdTB.Text; }
+        }
+
+        public string ConfirmPassword
+        {
+            get { return this.confirmPwdTB.Text; }
+        }
+
+        //EVENT HANDLERS
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            this.usrnameTB.Clear();
+            this.pwdTB.Clear();
+            this.confirmPwdTB.Clear();
+        }
+
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
+            //validate the three textboxes
+            this.validateUsernameTB();
+            this.validatePasswordTB();
+            this.validateConfirmPasswordTB();
+
+            //do any other special functions specific to classes using this user control.
+            this.submitRegistrationForm();
+        }
+
+        private void validateConfirmPasswordTB()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void validatePasswordTB()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void validateUsernameTB()
+        {
+            throw new NotImplementedException();
+        }
+
+        //named this virtual so that other forms using this usercontrol can override the method and decide what to do when the form is submitted i.e. where the data is returned to.
+        public virtual void submitRegistrationForm()
+        {
+            /**
+             * Do something like the following?
+             * Account tempAccount = new Account(this.Username, this.Password);
+             */
         }
     }
 }
