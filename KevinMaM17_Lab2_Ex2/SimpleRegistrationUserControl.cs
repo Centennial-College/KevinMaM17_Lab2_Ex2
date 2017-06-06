@@ -16,6 +16,7 @@ namespace KevinMaM17_Lab2_Ex2
         //declared regex obj to validate password
         Regex regExp = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
         bool validForm = true;  //true until proven guilty
+        string errorMessage = "";
 
 
         public SimpleRegistrationUserControl()
@@ -60,13 +61,27 @@ namespace KevinMaM17_Lab2_Ex2
 
         public bool SubmitForm()
         {
+            errorMessage = "";
             //validate the three textboxes
             if (!this.validateUsernameTB())
+            {
+                errorMessage += "Username cannot be empty!\n\n";
                 validForm = false;
+            }
             if (!this.validatePasswordTB())
+            {
+                errorMessage += "Password must contain at least 1 Capital, 1 Lowercase, 1 Digit, 1 Special Char and must be at least 8 characters long.\n\n";
                 validForm = false;
+            }
             if (!this.validateConfirmPasswordTB())
+            {
+                errorMessage += "The two Password fields must match!";
                 validForm = false;
+            }
+
+            if (errorMessage.Length > 0)
+                MessageBox.Show(errorMessage);
+
             return validForm;
         }
 
