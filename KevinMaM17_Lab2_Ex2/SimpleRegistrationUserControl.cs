@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace KevinMaM17_Lab2_Ex2
 {
@@ -77,17 +78,34 @@ namespace KevinMaM17_Lab2_Ex2
 
         private void validateConfirmPasswordTB()
         {
-            throw new NotImplementedException();
+            //confirm pwd must match pwd textbox
+            if (!this.ConfirmPassword.Equals(this.Password))
+            {
+                this.confirmPwdTB.BackColor = Color.Red;
+            }
         }
+
+        //declared regex obj to validate password
+        Regex regExp = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
 
         private void validatePasswordTB()
         {
-            throw new NotImplementedException();
+            //validates password for following criteria:
+            //at least on capital, at least one lowercase, at least one digit, at least one special char, at least 8 characters length
+
+            if (!regExp.IsMatch(this.Password))
+            {
+                this.pwdTB.BackColor = Color.Red;
+            }
         }
 
         private void validateUsernameTB()
         {
-            throw new NotImplementedException();
+            //checks for empty string
+            if (this.Username.Length == 0)
+            {
+                this.usrnameTB.BackColor = Color.Red;
+            }
         }
 
         //named this virtual so that other forms using this usercontrol can override the method and decide what to do when the form is submitted i.e. where the data is returned to.
