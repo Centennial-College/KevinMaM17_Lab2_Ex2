@@ -16,5 +16,15 @@ namespace SimpleRegistrationDemo
         {
             InitializeComponent();
         }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            this.simpleRegistrationUserControl.ClearAll();
+        }
+
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
+            this.simpleRegistrationUserControl.SubmitForm();
+        }
     }
 }

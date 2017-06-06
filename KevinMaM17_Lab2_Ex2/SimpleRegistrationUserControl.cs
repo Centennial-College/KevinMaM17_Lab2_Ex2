@@ -26,20 +26,6 @@ namespace KevinMaM17_Lab2_Ex2
             set { this.registrationGroupBox.Text = value; }
         }
 
-        //properties for submit btn
-        public string SubmitBtnText
-        {
-            get { return this.submitBtn.Text; }
-            set { this.submitBtn.Text = value; }
-        }
-
-        //properties for cancel btn
-        public string ClearBtnText
-        {
-            get { return this.clearBtn.Text; }
-            set { this.clearBtn.Text = value; }
-        }
-
         //READ-ONLY PROPERTIES
         public string Username
         {
@@ -56,9 +42,8 @@ namespace KevinMaM17_Lab2_Ex2
             get { return this.confirmPwdTB.Text; }
         }
 
-        //EVENT HANDLERS
-
-        private void clearBtn_Click(object sender, EventArgs e)
+        //PUBLIC METHODS
+        public void ClearAll()
         {
             this.usrnameTB.Clear();
             this.pwdTB.Clear();
@@ -68,17 +53,15 @@ namespace KevinMaM17_Lab2_Ex2
             this.confirmPwdTB.BackColor = Color.White;
         }
 
-        private void submitBtn_Click(object sender, EventArgs e)
+        public void SubmitForm()
         {
             //validate the three textboxes
             this.validateUsernameTB();
             this.validatePasswordTB();
             this.validateConfirmPasswordTB();
-
-            //do any other special functions specific to classes using this user control.
-            this.submitRegistrationForm();
         }
 
+        //PRIVATE METHODS
         private void validateConfirmPasswordTB()
         {
             //confirm pwd must match pwd textbox
@@ -121,15 +104,6 @@ namespace KevinMaM17_Lab2_Ex2
             {
                 this.usrnameTB.BackColor = Color.White;
             }
-        }
-
-        //named this virtual so that other forms using this usercontrol can override the method and decide what to do when the form is submitted i.e. where the data is returned to.
-        public virtual void submitRegistrationForm()
-        {
-            /**
-             * Do something like the following?
-             * Account tempAccount = new Account(this.Username, this.Password);
-             */
         }
     }
 }
