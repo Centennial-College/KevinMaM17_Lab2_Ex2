@@ -63,6 +63,9 @@ namespace KevinMaM17_Lab2_Ex2
             this.usrnameTB.Clear();
             this.pwdTB.Clear();
             this.confirmPwdTB.Clear();
+            this.usrnameTB.BackColor = Color.White;
+            this.pwdTB.BackColor = Color.White;
+            this.confirmPwdTB.BackColor = Color.White;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -83,6 +86,10 @@ namespace KevinMaM17_Lab2_Ex2
             {
                 this.confirmPwdTB.BackColor = Color.Red;
             }
+            else
+            {
+                this.confirmPwdTB.BackColor = Color.White;
+            }
         }
 
         //declared regex obj to validate password
@@ -97,6 +104,10 @@ namespace KevinMaM17_Lab2_Ex2
             {
                 this.pwdTB.BackColor = Color.Red;
             }
+            else
+            {
+                this.pwdTB.BackColor = Color.White;
+            }
         }
 
         private void validateUsernameTB()
@@ -105,6 +116,10 @@ namespace KevinMaM17_Lab2_Ex2
             if (this.Username.Length == 0)
             {
                 this.usrnameTB.BackColor = Color.Red;
+            }
+            else
+            {
+                this.usrnameTB.BackColor = Color.White;
             }
         }
 
