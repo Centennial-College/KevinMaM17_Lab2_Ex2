@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace SimpleRegistrationDemo
 {
-    public partial class SimpleRegistrationDemoForm : Form
+    public partial class SimpleAuthenticationUIDemoForm : Form
     {
 
         //collection of Account objects
         List<Account> accList = new List<Account>();
 
-        public SimpleRegistrationDemoForm()
+        public SimpleAuthenticationUIDemoForm()
         {
             InitializeComponent();
         }

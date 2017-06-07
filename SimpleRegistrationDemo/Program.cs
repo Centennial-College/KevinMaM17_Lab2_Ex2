@@ -16,7 +16,7 @@ namespace SimpleRegistrationDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SimpleRegistrationDemoForm());
+            Application.Run(new SimpleAuthenticationUIDemoForm());
         }
     }
 }

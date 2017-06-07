@@ -43,6 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleLoginUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SimpleLoginUserControl.Designer.cs">
+      <DependentUpon>SimpleLoginUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimpleRegistrationUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
