@@ -37,6 +37,8 @@
             this.simpleRegistrationUserControl = new KevinMaM17_Lab2_Ex2.SimpleRegistrationUserControl();
             this.loginTabPage = new System.Windows.Forms.TabPage();
             this.accountsDataGridView = new System.Windows.Forms.DataGridView();
+            this.accountsListGroupBox = new System.Windows.Forms.GroupBox();
+            this.stylePanel = new System.Windows.Forms.Panel();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,6 +49,8 @@
             this.accountManagmenetTabControl.SuspendLayout();
             this.registerTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
+            this.accountsListGroupBox.SuspendLayout();
+            this.stylePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +66,7 @@
             // 
             // mainSplitContainer.Panel2
             // 
-            this.mainSplitContainer.Panel2.Controls.Add(this.accountsDataGridView);
+            this.mainSplitContainer.Panel2.Controls.Add(this.accountsListGroupBox);
             this.mainSplitContainer.Size = new System.Drawing.Size(937, 308);
             this.mainSplitContainer.SplitterDistance = 511;
             this.mainSplitContainer.TabIndex = 0;
@@ -145,8 +149,30 @@
             this.accountsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountsDataGridView.Location = new System.Drawing.Point(0, 0);
             this.accountsDataGridView.Name = "accountsDataGridView";
-            this.accountsDataGridView.Size = new System.Drawing.Size(422, 308);
+            this.accountsDataGridView.Size = new System.Drawing.Size(416, 269);
             this.accountsDataGridView.TabIndex = 0;
+            // 
+            // accountsListGroupBox
+            // 
+            this.accountsListGroupBox.Controls.Add(this.stylePanel);
+            this.accountsListGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountsListGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
+            this.accountsListGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.accountsListGroupBox.Name = "accountsListGroupBox";
+            this.accountsListGroupBox.Size = new System.Drawing.Size(422, 308);
+            this.accountsListGroupBox.TabIndex = 1;
+            this.accountsListGroupBox.TabStop = false;
+            this.accountsListGroupBox.Text = "List of Temporary Accounts";
+            // 
+            // stylePanel
+            // 
+            this.stylePanel.Controls.Add(this.accountsDataGridView);
+            this.stylePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stylePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stylePanel.Location = new System.Drawing.Point(3, 36);
+            this.stylePanel.Name = "stylePanel";
+            this.stylePanel.Size = new System.Drawing.Size(416, 269);
+            this.stylePanel.TabIndex = 1;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
@@ -181,6 +207,8 @@
             this.accountManagmenetTabControl.ResumeLayout(false);
             this.registerTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).EndInit();
+            this.accountsListGroupBox.ResumeLayout(false);
+            this.stylePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -199,6 +227,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource accountBindingSource;
+        private System.Windows.Forms.GroupBox accountsListGroupBox;
+        private System.Windows.Forms.Panel stylePanel;
     }
 }
 
