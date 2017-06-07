@@ -36,6 +36,9 @@
             this.submitBtn = new System.Windows.Forms.Button();
             this.simpleRegistrationUserControl = new KevinMaM17_Lab2_Ex2.SimpleRegistrationUserControl();
             this.loginTabPage = new System.Windows.Forms.TabPage();
+            this.registerButton = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.simpleLoginUserControl = new KevinMaM17_Lab2_Ex2.SimpleLoginUserControl();
             this.accountsListGroupBox = new System.Windows.Forms.GroupBox();
             this.stylePanel = new System.Windows.Forms.Panel();
             this.accountsDataGridView = new System.Windows.Forms.DataGridView();
@@ -48,6 +51,7 @@
             this.mainSplitContainer.SuspendLayout();
             this.accountManagmenetTabControl.SuspendLayout();
             this.registerTabPage.SuspendLayout();
+            this.loginTabPage.SuspendLayout();
             this.accountsListGroupBox.SuspendLayout();
             this.stylePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
@@ -130,6 +134,9 @@
             // 
             // loginTabPage
             // 
+            this.loginTabPage.Controls.Add(this.registerButton);
+            this.loginTabPage.Controls.Add(this.loginButton);
+            this.loginTabPage.Controls.Add(this.simpleLoginUserControl);
             this.loginTabPage.Location = new System.Drawing.Point(4, 34);
             this.loginTabPage.Name = "loginTabPage";
             this.loginTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -137,6 +144,38 @@
             this.loginTabPage.TabIndex = 1;
             this.loginTabPage.Text = "Login";
             this.loginTabPage.UseVisualStyleBackColor = true;
+            // 
+            // registerButton
+            // 
+            this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.registerButton.Location = new System.Drawing.Point(129, 195);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(112, 38);
+            this.registerButton.TabIndex = 4;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // loginButton
+            // 
+            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.loginButton.Location = new System.Drawing.Point(241, 195);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(112, 38);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // simpleLoginUserControl
+            // 
+            this.simpleLoginUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleLoginUserControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.simpleLoginUserControl.Location = new System.Drawing.Point(3, 3);
+            this.simpleLoginUserControl.Margin = new System.Windows.Forms.Padding(6);
+            this.simpleLoginUserControl.Name = "simpleLoginUserControl";
+            this.simpleLoginUserControl.Size = new System.Drawing.Size(497, 264);
+            this.simpleLoginUserControl.TabIndex = 0;
             // 
             // accountsListGroupBox
             // 
@@ -199,13 +238,13 @@
             this.Name = "SimpleAuthenticationUIDemoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple Authentication UI";
-            this.Load += new System.EventHandler(this.SimpleRegistrationDemoForm_Load);
             this.mainSplitContainer.Panel1.ResumeLayout(false);
             this.mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
             this.accountManagmenetTabControl.ResumeLayout(false);
             this.registerTabPage.ResumeLayout(false);
+            this.loginTabPage.ResumeLayout(false);
             this.accountsListGroupBox.ResumeLayout(false);
             this.stylePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).EndInit();
@@ -229,6 +268,9 @@
         private System.Windows.Forms.DataGridView accountsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private KevinMaM17_Lab2_Ex2.SimpleLoginUserControl simpleLoginUserControl;
+        private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.Button loginButton;
     }
 }
 

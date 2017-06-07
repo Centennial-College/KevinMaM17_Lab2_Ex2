@@ -23,7 +23,7 @@ namespace SimpleRegistrationDemo
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            this.simpleRegistrationUserControl.ClearAll();
+            this.simpleRegistrationUserControl.ClearAllTextBoxes();
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace SimpleRegistrationDemo
                 {
                     accList.Add(newAccount);
                     MessageBox.Show($"The account with Username: {newAccount.Username} has been successfully registered!");
-                    this.simpleRegistrationUserControl.ClearAll();
+                    this.simpleRegistrationUserControl.ClearAllTextBoxes();
                 }
             }
 
@@ -51,9 +51,27 @@ namespace SimpleRegistrationDemo
             this.accountsDataGridView.DataSource = accList;
         }
 
-        private void SimpleRegistrationDemoForm_Load(object sender, EventArgs e)
+        private void registerButton_Click(object sender, EventArgs e)
         {
+            this.accountManagmenetTabControl.SelectedIndex = 0;
+        }
 
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            //validate credentials (check vs temp list of accounts)
+            if ((accList.Where(accFound => accFound.Username.Equals(this.simpleLoginUserControl.Username) && accFound.Password.Equals(this.simpleLoginUserControl.Password))).Count() > 0)
+            {
+                MessageBox.Show($"User: {this.simpleLoginUserControl.Username} has successfully logged into the system.");
+                this.simpleLoginUserControl.ClearAllTextBoxes();
+                this.simpleLoginUserControl.ChangeUsernameBackgroundColor(Color.White);
+                this.simpleLoginUserControl.ChangePasswordBackgroundColor(Color.White);
+            }
+            else
+            {
+                MessageBox.Show($"ERROR - You have entered in an invalid username/password combination.\n\nPlease ensure you entered the correct credentials.");
+                this.simpleLoginUserControl.ChangeUsernameBackgroundColor(Color.Red);
+                this.simpleLoginUserControl.ChangePasswordBackgroundColor(Color.Red);
+            }
         }
     }
 }

@@ -57,6 +57,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SimpleLoginUserControl.resx">
+      <DependentUpon>SimpleLoginUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SimpleRegistrationUserControl.resx">
       <DependentUpon>SimpleRegistrationUserControl.cs</DependentUpon>
     </EmbeddedResource>

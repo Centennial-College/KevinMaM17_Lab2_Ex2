@@ -49,7 +49,7 @@ namespace KevinMaM17_Lab2_Ex2
         }
 
         //PUBLIC METHODS
-        public void ClearAll()
+        public void ClearAllTextBoxes()
         {
             this.usrnameTB.Clear();
             this.pwdTB.Clear();
