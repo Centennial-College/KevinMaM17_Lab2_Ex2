@@ -25,7 +25,9 @@ namespace KevinMaM17_Lab2_Ex2
         public void ClearAllTextBoxes()
         {
             this.usrnameTB.Clear();
+            this.usrnameTB.BackColor = Color.White;
             this.pwdTB.Clear();
+            this.pwdTB.BackColor = Color.White;
         }
 
         public void ChangeUsernameBackgroundColor(Color c) => this.usrnameTB.BackColor = c;

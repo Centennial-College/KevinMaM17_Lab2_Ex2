@@ -86,6 +86,7 @@
             this.accountManagmenetTabControl.SelectedIndex = 0;
             this.accountManagmenetTabControl.Size = new System.Drawing.Size(511, 308);
             this.accountManagmenetTabControl.TabIndex = 0;
+            this.accountManagmenetTabControl.SelectedIndexChanged += new System.EventHandler(this.accountManagmenetTabControl_SelectedIndexChanged);
             // 
             // registerTabPage
             // 

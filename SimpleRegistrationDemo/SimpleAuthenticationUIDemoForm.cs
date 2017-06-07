@@ -63,14 +63,26 @@ namespace SimpleRegistrationDemo
             {
                 MessageBox.Show($"User: {this.simpleLoginUserControl.Username} has successfully logged into the system.");
                 this.simpleLoginUserControl.ClearAllTextBoxes();
-                this.simpleLoginUserControl.ChangeUsernameBackgroundColor(Color.White);
-                this.simpleLoginUserControl.ChangePasswordBackgroundColor(Color.White);
             }
             else
             {
                 MessageBox.Show($"ERROR - You have entered in an invalid username/password combination.\n\nPlease ensure you entered the correct credentials.");
                 this.simpleLoginUserControl.ChangeUsernameBackgroundColor(Color.Red);
                 this.simpleLoginUserControl.ChangePasswordBackgroundColor(Color.Red);
+            }
+        }
+
+        private void accountManagmenetTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //on register, changing to login
+            if (this.accountManagmenetTabControl.SelectedIndex == 1)
+            {
+                this.simpleRegistrationUserControl.ClearAllTextBoxes();
+            }
+            else
+            {
+                //on login, changing to register tab
+                this.simpleLoginUserControl.ClearAllTextBoxes();
             }
         }
     }
