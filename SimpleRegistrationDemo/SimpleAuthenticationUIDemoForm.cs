@@ -58,17 +58,25 @@ namespace SimpleRegistrationDemo
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //validate credentials (check vs temp list of accounts)
-            if ((accList.Where(accFound => accFound.Username.Equals(this.simpleLoginUserControl.Username) && accFound.Password.Equals(this.simpleLoginUserControl.Password))).Count() > 0)
+            //if no accounts in account list, notify user
+            if (accList.Count == 0)
             {
-                MessageBox.Show($"User: {this.simpleLoginUserControl.Username} has successfully logged into the system.");
-                this.simpleLoginUserControl.ClearAllTextBoxes();
+                MessageBox.Show($"There are currently no accounts registered in the system.\n\nPlease register an account before logging in.");
             }
             else
             {
-                MessageBox.Show($"ERROR - You have entered in an invalid username/password combination.\n\nPlease ensure you entered the correct credentials.");
-                this.simpleLoginUserControl.ChangeUsernameBackgroundColor(Color.Red);
-                this.simpleLoginUserControl.ChangePasswordBackgroundColor(Color.Red);
+                //validate credentials (check vs temp list of accounts)
+                if ((accList.Where(accFound => accFound.Username.Equals(this.simpleLoginUserControl.Username) && accFound.Password.Equals(this.simpleLoginUserControl.Password))).Count() > 0)
+                {
+                    MessageBox.Show($"User: {this.simpleLoginUserControl.Username} has successfully logged into the system.");
+                    this.simpleLoginUserControl.ClearAllTextBoxes();
+                }
+                else
+                {
+                    MessageBox.Show($"ERROR - You have entered in an invalid username/password combination.\n\nPlease ensure you entered the correct credentials.");
+                    this.simpleLoginUserControl.ChangeUsernameBackgroundColor(Color.Red);
+                    this.simpleLoginUserControl.ChangePasswordBackgroundColor(Color.Red);
+                }
             }
         }
 
@@ -78,6 +86,11 @@ namespace SimpleRegistrationDemo
             if (this.accountManagmenetTabControl.SelectedIndex == 1)
             {
                 this.simpleRegistrationUserControl.ClearAllTextBoxes();
+                //if no accounts in account list, notify user
+                if (accList.Count == 0)
+                {
+                    MessageBox.Show($"There are currently no accounts registered in the system.\n\nPlease register an account before logging in.");
+                }
             }
             else
             {
